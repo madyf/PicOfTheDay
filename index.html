@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/style.css">
+	<script src="src/apiManipulation.obfuscated.js"></script>
+	<script src="src/domManipulation.obfuscated.js"></script>
+	<script src="src/background.obfuscated.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<!-- Font from google fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="./images/icon.png">
+</head>
+<body>
+
+	<!-- Larger Body Sprites -->
+	<img id="cometSprite" src="images/cometHD.png" style="display: none;">
+	<!-- Planets and the moon generated with this website: https://deep-fold.itch.io/pixel-planet-generator -->
+	<img id="planetSprite" src="images/planet.png" style="display: none;">
+	<img id="ringPlanetSprite" src="images/ringPlanet.png" style="display: none;">
+	<img id="moonSprite" src="images/moon.png" style="display: none;">
+	
+	<!-- Animated Star Sprites -->
+	<img id="starSpriteSmall" src="images/stars_small.png" style="display: none;">
+	<img id="starSpriteMedium" src="images/stars_medium.png" style="display: none;">
+	<img id="starSpriteLarge" src="images/stars.png" style="display: none;">
+
+	<canvas id="background">
+	</canvas>
+
+	<h1>Assignment 2</h1>
+	<main>
+		<div class="buttons">
+			<div class="rocket_button" id="nasaButton">
+				<img class="back off" src="images/rocket_back_off.png">
+				<img class="back on" src="images/rocket_back.png">
+				<span class="mid">Get nasa data</span>
+				<img class="front" src="images/rocket_front.png">
+			</div>
+		</div>
+		<div id="warning" class="hidden">
+			
+		</div>
+		<div id="info">
+			<h2 id="title"></h2>
+			<span id="date"></span>
+			<div id="content">
+				<div id="media">
+					<div class="image content">
+						<img id="imageHD" src="" alt="" class="hidden">
+						<img id="imageSD" src="" alt="" class="hidden">
+					</div>
+					<div class="video content">
+						<video id="video" src=""></video>
+					</div>
+
+					<div class="loading hidden">
+						<!-- SVG radar found on Tabler Icons:https://github.com/tabler/tabler-icons -->
+						<svg xmlns="http://www.w3.org/2000/svg" class="satelite" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+							<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+							<path d="M3.707 6.293l2.586 -2.586a1 1 0 0 1 1.414 0l5.586 5.586a1 1 0 0 1 0 1.414l-2.586 2.586a1 1 0 0 1 -1.414 0l-5.586 -5.586a1 1 0 0 1 0 -1.414z" />
+							<path d="M6 10l-3 3l3 3l3 -3" />
+							<path d="M10 6l3 -3l3 3l-3 3" />
+							<line class="radar1" x1="13.5" y1="13.5" x2="13.5" y2="13.5" />
+							<path class="radar2" d="M14.5 17a2.5 2.5 0 0 0 2.5 -2.5" />
+							<path class="radar3" d="M15 21a6 6 0 0 0 6 -6" />
+						</svg>
+					</div>
+				</div>
+				<div class="explanation">
+					<p id="description"></p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<p>Noah Labrecque and Mady Fouert</p>
+		<p>API GITHUB Page: <a href="https://github.com/nasa/apod-api">APOD</a></p>
+		<p>NASA Api Website: <a href="https://api.nasa.gov/">NASA</a></p>
+	</footer>
+</body>
+</html>
